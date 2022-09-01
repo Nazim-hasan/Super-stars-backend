@@ -61,8 +61,8 @@ class UserAPIController extends Controller
 
     public function getUserImage(Request $request){
         $client = Client::where('email',$request->email)->first();
-        $path = public_path(). '/' .$client->image;
-        return Response::download($path); 
+        $path = $client->image;
+        return $path;
 
     }
 }
