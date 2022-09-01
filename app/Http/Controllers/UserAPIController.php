@@ -59,10 +59,8 @@ class UserAPIController extends Controller
         return 'Registered';
     }
 
-    public function getUserImage(Request $request){
+    public function getUserInfo(Request $request){
         $client = Client::where('email',$request->email)->first();
-        $path = $client->image;
-        return $path;
-
+        return $client;
     }
 }
